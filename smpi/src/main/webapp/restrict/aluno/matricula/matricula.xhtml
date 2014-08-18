@@ -5,7 +5,7 @@
 
     <body>
 
-        <ui:composition template="./../template.xhtml">
+        <ui:composition template="#{facesContext.externalContext.requestContextPath}/../template.xhtml">
 
             <ui:define name="content">
                 <div id="portal_corpo">
@@ -18,7 +18,7 @@
                             <li>Confirmar a solicitação;</li> 
                             <li>Após esse passo, o sistema envia, por e-mail, as turmas solicitadas e suas respectivas situações.</li> 
                         </ul>  
-                        <input type="button" onclick="window.location = '#{facesContext.externalContext.requestContextPath}/restrict/aluno/matricula/selecionaVinculo.html'" value="Prosseguir >>"></input>
+                        <input type="button" onclick="window.location = '#{facesContext.externalContext.requestContextPath}/restrict/aluno/endereco/enderecoCorrespondencia.faces'" value="Prosseguir >>"></input>
                     </div>
                 </div>
             </ui:define>

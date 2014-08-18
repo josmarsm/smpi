@@ -11,47 +11,167 @@
     <h:head>
         <title>Portal do Aluno - Bem-vindo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link href="#{facesContext.externalContext.requestContextPath}/resources/css/portal.css" rel="stylesheet" type="text/css" />
-        
+
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/resources/css/ufsm.css"></link> 
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/resources/css/estilo.css"></link>
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/resources/css/print.css" media="print"></link> 
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/resources/css/abas.css"></link> 
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/resources/css/portal.css"  />
+
+        <script type="text/javascript" async="" src="#{facesContext.externalContext.requestContextPath}/resources/jsc/ga.js"></script>
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/resources/jsc/jquery-1.7.2.min.js"></script> 
+        <script type="text/javascript"> /* este script deve estar ficar entre o jquery e o prototype para evitar conflito */ var $j = jQuery.noConflict();</script>
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/resources/jsc/functions.js"></script>
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/resources/jsc/highlight-table.js"></script> 
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/resources/jsc/help-box.js"></script> 
         <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
-        <script type="text/javascript" src="/visual/stratus-layout/js/jquery-1.7.2/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript"> /* este script deve estar ficar entre o jquery e o prototype para evitar conflito */ var $j = jQuery.noConflict(); </script>
-        <script type="text/javascript" src="/visual/js/functions.js"></script>
-        <script type="text/javascript" src="/aluno/js/ru/usuario/highlight-table.js"></script>
-        <script type="text/javascript" src="/aluno/js/ru/usuario/help-box.js"></script>
-        <script type="text/javascript" src="/visual/js/elements.js"></script>
-        <script type="text/javascript"> function changeDisplayStyle(idSubMenu) { ; return false; } </script>
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/resources/jsc/help-box.js"></script>
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/resources/jsc/elements.js"></script>
+
+
+        <script type="text/javascript"> var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-11595822-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();</script> 
+
+
+
+        <script type="text/javascript">
+            function changeDisplayStyle(idSubMenu)
+            {
+                ;
+                return false;
+            }
+        </script>
+
         <style type="text/css"> 
-            body { line-height: 1.5em; } 
-            div.menu { margin: 1.5em; }
+            body 
+            { 
+                line-height: 1.5em; 
+            } 
+            div.menu 
+            {
+                margin: 1.5em;
+            }
             div.menu img 
-            { vertical-align: middle; }
-            div.submenu { border-left: 2px; border-left-style: solid; border-left-color: black; margin-top: 0.5em; margin-left: 4em; padding-left: 1em; }
-            div.submenu a { font-weight: normal; } 
-            #Aviso { border-top: 1px solid #ff7b7b; border-bottom: 1px solid #ff7b7b; background-color: #f9dada; background-image: url('/aluno/img/ufsm/important.png'); background-repeat: no-repeat; background-position-y: center; padding: 10px; padding-left: 125px; font-size: 10pt; line-height: 1.5; min-height: 110px; } 
-            #Aviso .titulo { font-size: 14pt; text-align: center; } 
-        </style> 
-        <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-11595822-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
+            { 
+                vertical-align: middle; 
+            }
+            div.submenu 
+            {
+                border-left: 2px;
+                border-left-style: solid;
+                border-left-color: black;
+                margin-top: 0.5em;
+                margin-left: 4em;
+                padding-left: 1em;
+            }
+            div.submenu a 
+            { 
+                font-weight: normal;
+            } 
+
+            .Aviso {
+                border-top: 1px solid rgb(215,234,251);
+                border-bottom: 1px solid rgb(215,234,251);
+                background-image: url('/visual/icones/nuvola/22x22/actions/help.png');
+                background-repeat: no-repeat;
+                padding: 10px;
+                padding-left: 25px;
+                font-size: 8pt;
+                line-height: 1.5;
+            }
+
+            .Aviso .titulo 
+            { font-size: 14pt;
+              text-align: center; 
+            } 
+        </style>
+
+        <style type="text/css"> 
+            .nomePeriodo 
+            {
+                text-transform: capitalize;
+            } 
+            .tabelaPrioridades 
+            { 
+                border: none; 
+            }
+            .tabelaPrioridades td
+            { 
+                padding: 5px; 
+            } /* th { background: #BAC7D0; }*/ 
+            .Aviso 
+            { 
+                border-top: 1px solid rgb(215,234,251);
+                border-bottom: 1px solid rgb(215,234,251);
+                background-image: url('/visual/icones/nuvola/22x22/actions/help.png');
+                background-repeat: no-repeat;
+                padding: 10px;
+                padding-left: 25px;
+                font-size: 8pt;
+                line-height: 1.5;
+            } 
+            .Alerta 
+            { 
+                border-top: 1px solid rgb(215,234,251);
+                border-bottom: 1px solid rgb(215,234,251);
+                background-image: url('/visual/icones/nuvola/32x32/actions/messagebox_warning.png');
+                background-repeat: no-repeat;
+                background-color: #FFDDDD;
+                padding: 10px;
+                padding-left: 35px;
+                font-size: 10pt;
+                font-weight: bold;
+                line-height: 1.5;
+            } 
+            #dadosAluno
+            { 
+                margin: 0;
+                padding: 0;
+            } 
+        </style>
+
+        <script type="text/javascript"> var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-11595822-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
     </h:head>
     <h:body>   
-<body onload="" onscroll="">
-    <div id="portal_cabecalho"> 
-        <a href="/aluno/">
-            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/logo-portal.gif" alt="Portal do Aluno"></img>
-        </a> 
-    </div>
-    <div id="portal_barra"> 
-        <a href="/aluno/logout.jsp">
-            <img class="dir" src="/aluno/img/x.png" alt="Sair" title="Sair" width="22" height="22"></img>
-        </a> 
-        <a href="#{facesContext.externalContext.requestContextPath}/restrict/home.faces">
-            <img class="dir" src="#{facesContext.externalContext.requestContextPath}/resources/images/home.png" alt="Página Inicial" title="Página Inicial" width="22" height="22"></img>
-        </a> Bem-vindo(a), <strong>JOSMAR NUERNBERG</strong> <span class="NoPrint"> — 
-            <a href="/usuario/restrita/alterarSenha.html">alterar senha</a>
-        </span> 
-    </div> 
-                
-</body>        
+        <body onload="" onscroll="">
+            <div id="portal_cabecalho"> 
+                <a href="/aluno/">
+                    <img src="#{facesContext.externalContext.requestContextPath}/resources/images/logo-portal.gif" alt="Portal do Aluno"></img>
+                </a> 
+            </div>
+            <div id="portal_barra"> 
+                <a href="/aluno/logout.jsp">
+                    <img class="dir" src="#{facesContext.externalContext.requestContextPath}/resources/images/x.png" alt="Sair" title="Sair" width="22" height="22"></img>
+                </a> 
+                <a href="#{facesContext.externalContext.requestContextPath}/restrict/aluno/home.faces">
+                    <img class="dir" src="#{facesContext.externalContext.requestContextPath}/resources/images/home.png" alt="Página Inicial" title="Página Inicial" width="22" height="22"></img>
+                </a> Bem-vindo(a), <strong>JOSMAR NUERNBERG</strong> <span class="NoPrint"> — 
+                    <a href="/usuario/restrita/alterarSenha.html">alterar senha</a>
+                </span> 
+            </div> 
+
+        </body>        
         <!-- Menu ########################################## Menu -->
 
         <div id="content">
