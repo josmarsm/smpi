@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <body>
+
+        <ui:composition template="./../template.xhtml">
+
+            <ui:define name="content">
+                <div id="portal_corpo">
+                    <div id="portal_conteudo_corpo">
+                        <h3>   Você está matriculado(a) no seguinte curso:   PG - Mestrado Profissional em Tecnologias Educacionais em Rede     </h3>
+                        <div class="menu">
+                            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/kjobviewer.png" alt="icone" width="22" height="22"></img>
+                            <a href="" onclick="hideShow(getById('submenu-relatorios'));
+                                    return false;">Relatórios</a>
+                            <div id="submenu-relatorios" class="submenu" style="display:none;"> 
+                                <a href="/aluno/relatorio/atestadoTrancamento/index.html" onclick="desabilitaLink(this);">
+                                    Atestado de Trancamento de Curso </a>  <br></br>
+                                <a href="/aluno/relatorio/provavelFormando/index.html" onclick="desabilitaLink(this);">
+                                    Atestado de Provável Formando </a>  <br></br>
+                                <a href="/aluno/relatorio/reconhecimentoCurso/index.html" onclick="desabilitaLink(this);">
+                                    Atestado de Reconhecimento de Curso </a>  <br></br>
+                                Boletim Escolar (inativo)  <br></br>                                     
+                                <a href="/aluno/relatorio/certificadoBolsista/index.html" onclick="desabilitaLink(this);">
+                                    Certificado de Bolsista </a>  <br></br>
+                                <a href="/aluno/relatorio/comprovanteMatricula/index.html" onclick="desabilitaLink(this);">
+                                    Comprovante de Matrícula </a>  <br></br>
+                                <a href="/aluno/relatorio/fichaCadastralAluno/index.html" onclick="desabilitaLink(this);">
+                                    Ficha Cadastral do Aluno </a>  <br></br>
+                                <a href="/aluno/relatorio/historicoEscolarSimplificado/index.html" onclick="desabilitaLink(this);">
+                                    Histórico Escolar Simplificado </a>  <br></br>
+                                <a href="/aluno/relatorio/indiceDesempenhoAcademico/index.html" onclick="desabilitaLink(this);">
+                                    Índice de Desempenho Acadêmico </a>  <br></br>
+                                <a href="/aluno/relatorio/quadroHorariosAluno/form.html" onclick="desabilitaLink(this);">
+                                    Quadro de Horários do Aluno </a> <br></br>
+                                <a href="/aluno/relatorio/quadroNotas/index.html" onclick="desabilitaLink(this);"> 
+                                    Quadro de Notas do Aluno </a>  <br></br>
+                                <a href="/aluno/relatorio/solicitacaoMatricula/index.html" onclick="desabilitaLink(this);">
+                                    Solicitação de Matrícula </a>  <br></br>     
+                            </div> 
+                        </div>
+                        <div class="menu">                                    
+                            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/korganizer.png" alt="ícone" width="22" height="22"></img>
+                            <a href="/aluno/matricula/matricula.html" onclick="desabilitaLink(this);"> 
+                                Solicitação de matrícula </a> <br></br>
+                        </div>
+                        <div class="menu"> 
+                            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/kdict.png" alt="icone" width="22" height="22"></img>
+                            <a href="" onclick="hideShow(getById('submenu-plano-estudos'));
+                                    return false;">
+                                Plano de Estudos e Defesa de MDT</a> 
+                            <div id="submenu-plano-estudos" class="submenu" style="display:none;">
+                                <a href="/aluno/planoestudo/vinculo.html?action=plano" onclick="desabilitaLink(this);">
+                                    Plano de Estudos </a>  <br></br>
+                                <a href="/aluno/planoestudo/vinculo.html?action=defesa" onclick="desabilitaLink(this);"> 
+                                    Defesa de MDT </a>  <br></br>
+                            </div> 
+                        </div>  
+                        <div class="menu">                                   
+                            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/configure.png" alt="ícone" width="22" height="22"></img>
+                            <a href="javascript:hideShow(getById('submenu-alteracao-curricular'))" onclick="desabilitaLink(this);"> 
+                                Solicitação de Trancamento Total e Acompanhamento </a>  <br></br>
+                            <div id="submenu-alteracao-curricular" class="submenu" style="display:none;">
+                                <a href="/aluno/alteracao-curricular/solicitacoesAlunoCurso.html">
+                                    Acompanhar Solicitações Realizadas</a><br></br>
+                                <a href="/aluno/alteracao-curricular/trancamentoTotal.html">
+                                    Solicitar Trancamento Total</a><br></br>
+                                <a href="/aluno/alteracao-curricular/cancelaTrancamentoTotal.html" onclick="desabilitaLink(this);">
+                                    Cancelar Trancamento Total </a>  <br></br>
+                            </div> 
+                        </div> 
+                        <div class="menu">
+                            <div id="submenu-documentos-oficiais" class="submenu" style="display:none;">
+                                <a href="/aluno/documentos-oficiais/solicitacoesAlunoCurso.html">
+                                    Acompanhar Solicitações Realizadas</a><br></br>
+                                <a href="/aluno/documentos-oficiais/tiposDocumentos.html">
+                                    Solicitar Documento Oficial</a><br></br>
+                            </div>
+                        </div>
+                        <div class="menu">
+                            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/personal.png" alt="icone" width="22" height="22"></img>
+                            <a href="" onclick="hideShow(getById('submenu-dados-cadastrais'));
+                                    return false;">
+                                Alteração de Dados Cadastrais</a> 
+                            <div id="submenu-dados-cadastrais" class="submenu" style="display:none;">
+                                <a href="/aluno/endereco/buscaEndereco.html" onclick="desabilitaLink(this);">
+                                    Alteração do Endereço Correspondência </a>  <br></br>     
+                            </div> </div><div class="menu"> <img src="#{facesContext.externalContext.requestContextPath}/resources/images/ru.png" alt="icone" width="22" height="22"> </img>
+                            <a href="/ru/usuario">Restaurante Universitário</a>
+                        </div><div class="menu"> 
+                            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/editpaste.png" alt="ícone"></img>
+                            Requerimento de Dispensa ou Aproveitamento de Disciplinas (inativo)  <br></br>
+                        </div><div class="menu"> 
+                            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/fsview.png" alt="ícone" width="22" height="22"></img> 
+                            <a href="/prae/index.html" onclick="desabilitaLink(this);"> 
+                                Benefício Socioeconômico </a> 
+                        </div> 
+                        <div class="menu"> 
+                            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/khexedit.png" alt="Teste de Suficiência" title="Teste de Suficiência" width="22" height="22"></img>
+                            <a href="/suficiencia/">Teste de suficiência em língua estrangeira</a> 
+                        </div>  
+                        <div class="menu"> 
+                            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/date.png" alt="Calendário letivo" title="Calendário letivo" width="22" height="22"></img>
+                            <a href="http://site.ufsm.br/ufsm/calendario-academico">
+                                Calendário letivo</a>
+                        </div> 
+                    </div> 
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

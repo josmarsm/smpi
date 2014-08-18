@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+      ><!-- xmlns:sec="http://www.springframework.org/security/facelets/tags" -->
+
+    <h:head>
+        <title>Portal do Aluno - Bem-vindo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="#{facesContext.externalContext.requestContextPath}/resources/css/portal.css" rel="stylesheet" type="text/css" />
+        
+        <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+        <script type="text/javascript" src="/visual/stratus-layout/js/jquery-1.7.2/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript"> /* este script deve estar ficar entre o jquery e o prototype para evitar conflito */ var $j = jQuery.noConflict(); </script>
+        <script type="text/javascript" src="/visual/js/functions.js"></script>
+        <script type="text/javascript" src="/aluno/js/ru/usuario/highlight-table.js"></script>
+        <script type="text/javascript" src="/aluno/js/ru/usuario/help-box.js"></script>
+        <script type="text/javascript" src="/visual/js/elements.js"></script>
+        <script type="text/javascript"> function changeDisplayStyle(idSubMenu) { ; return false; } </script>
+        <style type="text/css"> 
+            body { line-height: 1.5em; } 
+            div.menu { margin: 1.5em; }
+            div.menu img 
+            { vertical-align: middle; }
+            div.submenu { border-left: 2px; border-left-style: solid; border-left-color: black; margin-top: 0.5em; margin-left: 4em; padding-left: 1em; }
+            div.submenu a { font-weight: normal; } 
+            #Aviso { border-top: 1px solid #ff7b7b; border-bottom: 1px solid #ff7b7b; background-color: #f9dada; background-image: url('/aluno/img/ufsm/important.png'); background-repeat: no-repeat; background-position-y: center; padding: 10px; padding-left: 125px; font-size: 10pt; line-height: 1.5; min-height: 110px; } 
+            #Aviso .titulo { font-size: 14pt; text-align: center; } 
+        </style> 
+        <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-11595822-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script>
+    </h:head>
+    <h:body>   
+<body onload="" onscroll="">
+    <div id="portal_cabecalho"> 
+        <a href="/aluno/">
+            <img src="#{facesContext.externalContext.requestContextPath}/resources/images/logo-portal.gif" alt="Portal do Aluno"></img>
+        </a> 
+    </div>
+    <div id="portal_barra"> 
+        <a href="/aluno/logout.jsp">
+            <img class="dir" src="/aluno/img/x.png" alt="Sair" title="Sair" width="22" height="22"></img>
+        </a> 
+        <a href="#{facesContext.externalContext.requestContextPath}/restrict/home.faces">
+            <img class="dir" src="#{facesContext.externalContext.requestContextPath}/resources/images/home.png" alt="Página Inicial" title="Página Inicial" width="22" height="22"></img>
+        </a> Bem-vindo(a), <strong>JOSMAR NUERNBERG</strong> <span class="NoPrint"> — 
+            <a href="/usuario/restrita/alterarSenha.html">alterar senha</a>
+        </span> 
+    </div> 
+                
+</body>        
+        <!-- Menu ########################################## Menu -->
+
+        <div id="content">
+            <ui:insert name="content"></ui:insert>
+        </div>
+
+    </h:body>
+
+</html>
