@@ -29,10 +29,10 @@
                         <div id="solicitacoesTurmas" style="">
                             <ul class="abas">
                                 <li>
-                                    <a href="./matricula2.htm" id="solicitacaoAba" onclick="ativaAba(this);" class="active">Solicitar disciplinas</a>
+                                    <a href="#{facesContext.externalContext.requestContextPath}/restrict/aluno/matricula/solicitacao.faces" id="solicitacaoAba" onclick="ativaAba(this);" class="active">Solicitar disciplinas</a>
                                 </li> 
                                 <li>
-                                    <a href="./matricula3.htm" id="statusAba" onclick="ativaAba(this);" class="">Situação da solicitação</a>
+                                    <a href="#{facesContext.externalContext.requestContextPath}/restrict/aluno/matricula/situacao.faces" id="statusAba" onclick="ativaAba(this);" class="">Situação da solicitação</a>
                                 </li> 
                             </ul>  
                             <form id="matriculaCommand" action="http://portal.ufsm.br/aluno/matricula/solicitacao.html?idCursoAluno=280680" method="post">
