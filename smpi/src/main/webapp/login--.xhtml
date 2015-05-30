@@ -8,18 +8,34 @@
       xmlns:sec="http://www.springframework.org/security/facelets/tags">
 
     <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link href="./resources/restrict/css/erudio.css" rel="stylesheet" type="text/css" />
-        <link href="./resources/restrict/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <title>Login</title>
+        <title>Portal do Aluno </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="./resources/restrict/css/browser-detector-min.css"/> 
+        <link rel="stylesheet" type="text/css" href="./resources/restrict/css/jquery-ui-min.css"/>
+        <link rel="stylesheet" type="text/css" href="./resources/restrict/css/mocca-pack-ufsm-min.css"/>
+        <script type="text/javascript" src="./resources/restrict/css/browser-detector-min.js"></script>
+        <script type="text/javascript" src="./resources/restrict/css/jquery-min.js"></script>
+        <script type="text/javascript" src="./resources/restrict/css/jquery-ui-min.js"></script>
+        <script type="text/javascript" src="./resources/restrict/css/jquery-mocca-pack-min.js"></script>
+        <style>  
+            .themed-band { background-color: #12416B; background: url(./resources/restrict/images/UFSM-banner-bg.jpg') top left repeat-x; } 
+            .form-spacing { height: 60px; } 
+            .form { margin-top: 1em; margin-bottom: 1em; background-color: rgba(245, 245, 245, .94); } 
+            .transparent-subband { /*min-height: 120px;*/ background-color: rgba(255, 255, 255, .85); } 
+            .form-subband { /*background-color: rgba(255, 255, 255, .1);*/ } 
+            .container.semi-narrow { padding-top: .5em; padding-bottom: .5em; } 
+        </style> 
+
     </h:head>
+
     <h:body onload="dialog.login.j_username.focus()">
 
         <div id="topo">
             <div id="logotipo"></div>
-            
+
             <div id="logoff">
-  
+
             </div>  
         </div>       
 

@@ -8,61 +8,192 @@
       xmlns:sec="http://www.springframework.org/security/facelets/tags">
 
     <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link href="./resources/restrict/css/erudio.css" rel="stylesheet" type="text/css" />
-        <link href="./resources/restrict/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <title>Login</title>
+        <title>Portal do Aluno </title>
+       <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <link href="./resources/restrict/css/browser-detector-min.css" rel="stylesheet" type="text/css" media="screen" /> 
+        <link href="./resources/restrict/css/jquery-ui-min.css" rel="stylesheet" type="text/css" />
+        <link href="./resources/restrict/css/mocca-pack-ufsm-min.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="./resources/restrict/css/browser-detector-min.js"></script>
+        <script type="text/javascript" src="./resources/restrict/css/jquery-min.js"></script>
+        <script type="text/javascript" src="./resources/restrict/css/jquery-ui-min.js"></script>
+        <script type="text/javascript" src="./resources/restrict/css/jquery-mocca-pack-min.js"></script>
+        <style>  
+            .themed-band { background-color: #12416B; background: url('./resources/restrict/images/UFSM-banner-bg.jpg') top left repeat-x; } 
+            .form-spacing { height: 60px; } 
+            .form { margin-top: 1em; margin-bottom: 1em; background-color: rgba(245, 245, 245, .94); } 
+            .transparent-subband { /*min-height: 120px;*/ background-color: rgba(255, 255, 255, .85); } 
+            .form-subband { /*background-color: rgba(255, 255, 255, .1);*/ } 
+            .container.semi-narrow { padding-top: .5em; padding-bottom: .5em; } 
+        </style>
+        
+
     </h:head>
     <h:body onload="dialog.login.j_username.focus()">
 
-        <div id="topo">
-            <div id="logotipo"></div>
-            
-            <div id="logoff">
-  
-            </div>  
-        </div>       
-
-        <div id="conteudo" title="Área Restrita">
-            <h:form>
-                <p:growl id="msg" rendered="#{param.erro}">#{msgs.erro_message}</p:growl>
-            </h:form>
-
-            <p:dialog header="Área Restrita"
-                      id="dialog"  
-                      modal="true"
-                      minWidth="335"
-                      width="335"
-                      closable="false"
-                      position="center"
-                      widgetVar="modalLogin"
-                      showEffect="slide" 
-                      draggable="false"
-                      resizable="false"
-                      visible="true">
-
-
-                <form action="j_spring_security_check" method="post" id="login">
-                    <h:panelGrid columns="2" cellpadding="3">
-                        <h:outputLabel for="j_username" value="Usuário: " /> 
-                        <h:inputText id="j_username" required="true"/>
-                        <h:outputLabel for="j_password" value="Senha: " />
-                        <h:inputSecret id="j_password" required="true"/>
-                        <h:commandButton value="Acessar"/>
-                    </h:panelGrid>
-                </form>
-            </p:dialog>  
+        <div class="band govbar2 no-print" data-role="govbar">
+            <div class="container">
+                <ul class="govbar2-list">
+                    <li class="flag">
+                        <a href="http://brasil.gov.br/" class="uppercase" target="gov">Brasil</a>
+                    </li>
+                    <li>
+                        <a href="http://brasil.gov.br/barra#acesso-informacao" target="gov">Acesso à informação</a>
+                    </li>
+                </ul>
+                <ul class="govbar2-list pull-right">
+                    <li>
+                        <a href="http://brasil.gov.br/barra#participe" target="gov">Participe</a>
+                    </li>
+                    <li>
+                        <a href="http://www.servicos.gov.br/" target="gov">Serviços</a>
+                    </li>
+                    <li>
+                        <a href="http://www.planalto.gov.br/legislacao" target="gov">Legislação</a>
+                    </li>
+                    <li>
+                        <a href="http://brasil.gov.br/barra#orgaos-atuacao-canais" target="gov">Canais</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Fim da div conteudo -->
+        <!-- menu navbar -->
+        <nav class="band navbar ufsm-top">
+            <div class="container no-padding-v"> 
+                <ul class="nav mini"> 
+                    <li> <div class="btn-group"> 
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"> Institucional <span class="caret"></span> </a>
+                            <ul class="dropdown-menu" role="menu">  
+                                <li role="menuitem">
+                                    <a tabindex="-1" href="http://portal.ufsm.br/autenticacao">
+                                        <i class="icon-globe">
+                                        </i> Autenticação de Relatórios</a>
+                                </li>  <li role="menuitem">
+                                    <a tabindex="-1" href="http://portal.ufsm.br/biblioteca"><i class="icon-globe"></i> Biblioteca</a>
+                                </li>  
+                                <li role="menuitem">
+                                    <a tabindex="-1" href="http://portal.ufsm.br/documentos"><i class="icon-globe"></i> Consulta de Resoluções</a>
+                                </li>  
+                                <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/processos"><i class="icon-globe"></i> Consulta Processos</a></li>
+                                <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/ementario"><i class="icon-globe"></i> Ementário</a></li>  
+                                <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/indicadores"><i class="icon-globe"></i> Indicadores</a></li>  
+                                <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/jai"><i class="icon-globe"></i> Jornada Acadêmica Integrada</a></li>  
+                                <li role="menuitem"><a tabindex="-1" href="http://nte.ufsm.br/moodle2_UAB"><i class="icon-globe"></i> Moodle (EaD)</a></li>  
+                                <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/ouvidoria"><i class="icon-globe"></i> Ouvidoria</a></li>  
+                                <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/planejamento"><i class="icon-globe"></i> Portal de Desenvolvimento Institucional</a> </li>  
+                            </ul> 
+                        </div> 
+                    </li>     
+                </ul> 
+            </div> 
+        </nav> 
 
-        <div id="rodape">
-            <a href="http://www.semeru.com.br/"><img src="./resources/restrict/images/logo_mini.png" /></a>
+        <!-- main --> 
+        <div class="band"> 
+            <div class="band themed-band shadowed"> 
+                
+                <div class="band transparent-subband"> 
+                    <div class="container">  
+                        <a class="no-link h1 pull-right no-margin-top uppercase humanist-font" href="http://portal.ufsm.br/aluno/index.html;jsessionid=a6e68ba8cab729ce9ef92fe53f9a">
+                            <b>UFSM</b> | Portal do Aluno</a>
+                    </div> 
+                </div>
+              
+                <div class="band form-subband"> 
+                    <div class="container no-padding-v"> 
+                        <div class="row"> 
+                            <div class="span4"> 
+                                <div class="form-spacing hidden-phone-tablet">
+                                </div> 
+                                <img class="responsive hidden-phone" src="./resources/restrict/images/UFSM-banner-logo.png" alt="logo"/> 
+                            </div> 
+                            <div class="span8"> 
+                                <div class="form-spacing hidden-phone-tablet"></div> 
+                                <div class="box form bordered shadowed rounded pull-right-tablet-desktop"> 
+                                    <div class="span5"> 
 
-            <div id="copyright">                  
-                <a href="http://www.semeru.com.br/">Semeru - Curso de Java Server Faces com Hibernate, Maven e Spring Security - &copy; Copyright semeru.com.br 2012</a>
-            </div>
-        </div> <!--Fim da div rodape -->
+                                        <!-- Inicio do formulário -->
+                                        <form action="j_spring_security_check" method="post">
+                                            <div class="row"></div> 
+                                            <div class="row"> 
+                                                <div class="span12 padding-top"> 
+                                                    <label for="login" class="label">Usuário</label> 
+                                                    <input id="login" name="j_username" type="text" class="textfield width-100 block" value=""/> 
+                                                </div> 
+                                            </div> 
+                                            <div class="row"> 
+                                                <div class="span12 padding-top"> 
+                                                    <label for="senha" class="label">Senha</label> 
+                                                    <input id="senha" name="j_password" type="password" class="textfield width-100 block"/> 
+                                                    <span id="capsAlert_senha" class="pill danger" style="display: none;">Atenção! O CAPS LOCK está ligado!</span>
+                                                </div> 
+                                            </div> 
+                                            <div class="row"> 
+                                                <div class="span12 margin-top"> 
+                                                    <button type="submit" name="enter" class="btn primary pull-left"> 
+                                                        <i class="icon-key"></i> Entrar </button>  
+                                                    <a href="http://portal.ufsm.br/usuario/esqueciSenha.html" class="btn link pull-left"> Esqueci minha senha </a> 
+                                                </div> 
+                                            </div> <br/> 
+                                            <div class="row"> 
+                                                <div class="span12 padding-top align-justify"> Para identificar-se, utilize a sua matrícula e a sua senha (mesma usada no sistema de bibliotecas). 
+                                                    <!-- Caso não possua, utilize a funcionalidade <a href="/usuario/esqueciSenha.html" class="link ">Esqueci minha senha</a> --> 
+                                                </div> 
+                                            </div> 
+                                        </form>
+                                        <!-- Fim do formulário-->
+                                    </div>
+                                    <div class="span6 offset1"> 
+                                        <div class="row">
+                                            <div class="span12 padding-top"> 
+                                                <label class="label">Instruções - Alunos novos</label> 
+                                            </div> 
+                                        </div> 
+                                        <div class="row"> 
+                                            <div class="span12 padding-top align-justify"> 
+                                                Para alunos novos, a identificação será o número de matrícula e a senha a data de nascimento no formato <b>DDMMAAAA</b>. 
+                                                Por exemplo, <b>01091989</b>, para nascido em 01/09/1989. 
+                                            </div> 
+                                        </div>  
+                                        <div class="row"> 
+                                            <div class="span12 padding-top align-justify"> 
+                                                O número de matrícula e a senha são enviados para o e-mail informado na confirmação da vaga, 
+                                                somente após esse processo, conforme calendário letivo. 
+                                                Obs: Caso não tenha recebido esse e-mail na caixa de entrada, verifique a caixa de spam, ou acesse o 
+                                                <a href="http://portal.ufsm.br/confirmacao/" target="_blank" class="link">Portal de Confirmação de Vaga</a> 
+                                                e consulte seu número de matrícula. 
+                                            </div> 
+                                        </div> 
+                                        <div class="row"> 
+                                            <div class="span12 padding-top align-justify"> Para maiores informações, entre em contato com o DERCA, através do telefone 3220-8204 ou e-mail 
+                                                <a href="mailto: derca.ingresso@ufsm.br" class="link">derca.ingresso@ufsm.br</a>. 
+                                            </div> 
+                                        </div> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                        </div> 
+                        <script type="text/javascript"> $(document).ready(function () {
+                                $('#senha').capsAlert();
+                            });</script> 
+                    </div>
 
+                </div> 
+                <div class="band transparent-subband mini-font-size "> 
+                    <div class="container semi-narrow stroked-top"> 
+                        <div class="row"> 
+                            <div class="span6"> <span class="dimmed">Portal do Aluno - Versão 2.1.2</span> </div> 
+                            <div class="span6 align-right-tablet-desktop"> <span class="dimmed">Copyright © 2015 CPD-UFSM. Todos os direitos reservados.</span> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+        <script type="text/javascript"> $(document).ready(function () {
+                $('body').govbar();
+            });
+        </script>  <ul class="vakata-context"></ul>
+        <div id="jstree-marker" style="display: none;">&nbsp;</div>
     </h:body>
 </html>

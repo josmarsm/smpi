@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"                
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="./../resources/main.xhtml">
+    <ui:define name="tarefas">
+        <p:growl id="msg" life="300000"/>
+
+        <div class="ui-fieldset-content">
+            <script type="text/javascript">
+                function atualizarFocoObjeto() {
+                    jQuery('[id*="cidadeOrigem"]').focus();
+                }
+            </script>
+            <span id="formCadastraViagem:j_idt699:outputText" class="scdp">Clique sobre o trecho para editá-lo.</span>
+            <div id="formCadastraViagem:trechos" class="ui-datatable ui-widget scdp">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="formCadastraViagem:trechos:j_idt700" class="ui-state-default">
+                                <span id="formCadastraViagem:trechos:origem:outputText" class="scdp_tabela">Origem</span>
+                            </th>
+                            <th id="formCadastraViagem:trechos:j_idt701" class="ui-state-default">
+                                <span id="formCadastraViagem:trechos:j_idt702:outputText" class="scdp_tabela">Destino</span>
+                            </th>
+                            <th id="formCadastraViagem:trechos:j_idt704" class="ui-state-default" style="text-align:center;width:145px">
+                                <span id="formCadastraViagem:trechos:j_idt705:outputText" class="scdp_tabela">Permanência</span>
+                            </th>
+                            <th id="formCadastraViagem:trechos:j_idt707" class="ui-state-default" style="text-align:center;font-size:1em;width:150px">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="formCadastraViagem:trechos_data" class="ui-datatable-data">
+                        <tr id="formCadastraViagem:trechos_row_0" class="ui-widget-content ui-datatable-even" style="cursor: pointer;">
+                            <td>
+                                <span id="formCadastraViagem:trechos:0:cidadeOrigemCol:outputText" class="scdp_tabela">Aracaju (SE)</span>
+                            </td>
+                            <td>
+                                <span id="formCadastraViagem:trechos:0:j_idt703:outputText" class="scdp_tabela">Santa Maria (RS)</span>
+                            </td>
+                            <td style="text-align:center;width:145px">
+                                <span id="formCadastraViagem:trechos:0:j_idt706:outputText" class="scdp_tabela">08/04/2015 - 10/04/2015</span>
+                            </td>
+                            <td style="text-align:center;font-size:1em;width:150px">
+                                <a id="formCadastraViagem:trechos:0:j_idt708" href="javascript:void(0);" onclick="confirmaExclusaoTrecho.show();
+                                        ;
+                                        PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:0:j_idt708', process: '@all'});">
+                                    <img src="/novoscdp/resources/images/excluir.png" style="cursor:pointer;margin-right:15px;" title="Excluir"/></a>
+                                <a id="formCadastraViagem:trechos:0:j_idt710" href="javascript:void(0);" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:0:j_idt710', process: '@all', update: 'formCadastraViagem:roteiros'});">
+                                    <img src="/novoscdp/resources/images/inserir_linha_antes.gif" style="cursor:pointer;margin-right:15px;" title="Incluir antes"/></a>
+                                <a id="formCadastraViagem:trechos:0:j_idt712" href="javascript:void(0);" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:0:j_idt712', process: '@all', update: 'formCadastraViagem:roteiros'});">
+                                    <img src="/novoscdp/resources/images/inserir_linha_depois.gif" style="cursor:pointer;margin-right:15px;" title="Incluir depois"/></a>
+                                <a id="formCadastraViagem:trechos:0:j_idt714" href="javascript:void(0);" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:0:j_idt714', process: '@all', oncomplete: function (xhr, status, args) {
+                                                confirmaMovimentoAcima.show();
+                                                jQuery('html,body').animate({scrollTop: 0}, 0);
+                                                ;
+                                            }});">
+                                    <img src="/novoscdp/resources/images/mover_para_cima.gif" style="cursor:pointer;margin-right:15px;" title="Mover para cima"/></a>
+                                <a id="formCadastraViagem:trechos:0:j_idt716" href="javascript:void(0);" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:0:j_idt716', process: '@all', oncomplete: function (xhr, status, args) {
+                                                confirmaMovimentoAbaixo.show();
+                                                jQuery('html,body').animate({scrollTop: 0}, 0);
+                                                ;
+                                            }});">
+                                    <img src="/novoscdp/resources/images/mover_para_baixo.gif" style="cursor:pointer;" title="Mover para baixo"/></a>
+                            </td>
+                        </tr>
+                        <tr id="formCadastraViagem:trechos_row_1" class="ui-widget-content ui-datatable-odd" style="cursor: pointer;">
+                            <td>
+                                <span id="formCadastraViagem:trechos:1:cidadeOrigemCol:outputText" class="scdp_tabela">Santa Maria (RS)</span>
+                            </td>
+                            <td>
+                                <span id="formCadastraViagem:trechos:1:j_idt703:outputText" class="scdp_tabela">Retorno para Aracaju (SE)</span>
+                            </td>
+                            <td style="text-align:center;width:145px">
+                                <span id="formCadastraViagem:trechos:1:j_idt706:outputText" class="scdp_tabela">10/04/2015</span>
+                            </td>
+                            <td style="text-align:center;font-size:1em;width:150px">
+                                <a id="formCadastraViagem:trechos:1:j_idt708" href="javascript:void(0);" onclick="confirmaExclusaoTrecho.show();
+                                        ;
+                                        PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:1:j_idt708', process: '@all'});"><img src="/novoscdp/resources/images/excluir.png" style="cursor:pointer;margin-right:15px;" title="Excluir"></a><a id="formCadastraViagem:trechos:1:j_idt710" href="javascript:void(0);" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:1:j_idt710', process: '@all', update: 'formCadastraViagem:roteiros'});"><img src="/novoscdp/resources/images/inserir_linha_antes.gif" style="cursor:pointer;margin-right:15px;" title="Incluir antes"></a><a id="formCadastraViagem:trechos:1:j_idt712" href="javascript:void(0);" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:1:j_idt712', process: '@all', update: 'formCadastraViagem:roteiros'});"><img src="/novoscdp/resources/images/inserir_linha_depois.gif" style="cursor:pointer;margin-right:15px;" title="Incluir depois"></a><a id="formCadastraViagem:trechos:1:j_idt714" href="javascript:void(0);" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:1:j_idt714', process: '@all', oncomplete: function (xhr, status, args) {
+                                                        confirmaMovimentoAcima.show();
+                                                        jQuery('html,body').animate({scrollTop: 0}, 0);
+                                                        ;
+                                                    }});">
+                                    <img src="/novoscdp/resources/images/mover_para_cima.gif" style="cursor:pointer;margin-right:15px;" title="Mover para cima"/></a>
+                                <a id="formCadastraViagem:trechos:1:j_idt716" href="javascript:void(0);" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:trechos:1:j_idt716', process: '@all', oncomplete: function (xhr, status, args) {
+                                                confirmaMovimentoAbaixo.show();
+                                                jQuery('html,body').animate({scrollTop: 0}, 0);
+                                                ;
+                                            }});">
+                                    <img src="/novoscdp/resources/images/mover_para_baixo.gif" style="cursor:pointer;" title="Mover para baixo"/></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="hidden" id="formCadastraViagem:trechos_selection" name="formCadastraViagem:trechos_selection" value=""/>
+            </div>
+            <script type="text/javascript">widget_formCadastraViagem_trechos = new PrimeFaces.widget.DataTable('formCadastraViagem:trechos', {url: '/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', formId: 'formCadastraViagem', selectionMode: 'single', instantSelect: true, onRowSelectUpdate: 'formCadastraViagem:roteiros formCadastraViagem:botoesRodape formCadastraViagem:tabViewScript', onRowSelectComplete: function (xhr, status, args) {
+                        atualizarFocoObjeto()
+                    }});</script>
+            <button id="formCadastraViagem:btnNovoTrecho" name="formCadastraViagem:btnNovoTrecho" class="scdp ui-button ui-widget ui-state-default ui-corner-all ui-button-disabled ui-state-disabled ui-button-text-only" onclick="this.disabled = true;
+                    ;
+                    PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:btnNovoTrecho', process: '@all', update: 'formCadastraViagem:roteiros formCadastraViagem:botoesRodape formCadastraViagem:tabViewScript', oncomplete: function (xhr, status, args) {
+                            atualizarFocoObjeto();
+                        }});
+                    return false;" disabled="" type="submit" role="button" aria-disabled="true">
+                <span class="ui-button-text">Novo</span>
+            </button>
+            <script type="text/javascript">widget_formCadastraViagem_btnNovoTrecho = new PrimeFaces.widget.CommandButton('formCadastraViagem:btnNovoTrecho', {});</script>
+            <script type="text/javascript">jQuery(function () {
+                    confirmaMovimentoAcima = new PrimeFaces.widget.Dialog('formCadastraViagem:confirmaMovimentoAcima', {autoOpen: false, minHeight: 0, dialogClass: 'scdp', modal: true, closable: false});
+                });
+            </script>
+            <script type="text/javascript">jQuery(function () {
+                    confirmaMovimentoAbaixo = new PrimeFaces.widget.Dialog('formCadastraViagem:confirmaMovimentoAbaixo', {autoOpen: false, minHeight: 0, dialogClass: 'scdp', modal: true, closable: false});
+                });</script>
+            <div class="ui-dialog ui-widget ui-widget-content ui-corner-all scdp ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-formCadastraViagem:confirmaMovimentoAcima" id="formCadastraViagem:confirmaMovimentoAcima" style="display: none; z-index: 1000; outline: 0px; position: absolute;">
+                <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+                    <span class="ui-dialog-title" id="ui-dialog-title-formCadastraViagem:confirmaMovimentoAcima">Roteiro da Viagem</span>
+                    <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="display: none;">
+                        <span class="ui-icon ui-icon-closethick">close</span></a>
+                </div>
+                <div style="" class="ui-dialog-content ui-widget-content">
+                    <fieldset id="formCadastraViagem:j_idt718" class="ui-fieldset ui-widget ui-widget-content ui-corner-all scdp">
+                        <div class="ui-fieldset-content">
+                            <span class="scdp">Confirma a movimentação do trecho para cima?</span>
+                            <br/>
+                            <button id="formCadastraViagem:btSimAcima" name="formCadastraViagem:btSimAcima" class="scdp ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="confirmaMovimentoAcima.hide();
+                                    ;
+                                    PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:btSimAcima', process: '@all', update: 'formCadastraViagem:roteiros'});
+                                    return false;" type="submit" role="button" aria-disabled="false">
+                                <span class="ui-button-text">Sim</span>
+                            </button>
+                            <button id="formCadastraViagem:btNaoAcima" name="formCadastraViagem:btNaoAcima" class="scdp ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:btNaoAcima', process: '@all', oncomplete: function (xhr, status, args) {
+                                            confirmaMovimentoAcima.hide();
+                                            ;
+                                        }});
+                                    return false;" type="submit" role="button" aria-disabled="false">
+                                <span class="ui-button-text">Não</span>
+                            </button>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="ui-resizable-handle ui-resizable-n">
+                </div>
+                <div class="ui-resizable-handle ui-resizable-e">
+                </div>
+                <div class="ui-resizable-handle ui-resizable-s">
+                </div>
+                <div class="ui-resizable-handle ui-resizable-w">
+                </div>
+                <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002;">
+                </div>
+                <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003;">
+                </div>
+                <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004;">
+                </div>
+            </div>
+            <div class="ui-dialog ui-widget ui-widget-content ui-corner-all scdp ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-formCadastraViagem:confirmaMovimentoAbaixo" id="formCadastraViagem:confirmaMovimentoAbaixo" style="display: none; z-index: 1000; outline: 0px; position: absolute;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+                    <span class="ui-dialog-title" id="ui-dialog-title-formCadastraViagem:confirmaMovimentoAbaixo">Roteiro da Viagem</span>
+                    <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="display: none;">
+                        <span class="ui-icon ui-icon-closethick">close</span></a>
+                </div>
+                <div style="" class="ui-dialog-content ui-widget-content">
+                    <fieldset id="formCadastraViagem:j_idt721" class="ui-fieldset ui-widget ui-widget-content ui-corner-all scdp">
+                        <div class="ui-fieldset-content">
+                            <span class="scdp">Confirma a movimentação do trecho para baixo?</span>
+                            <br/>
+                            <button id="formCadastraViagem:btSimAbaixo" name="formCadastraViagem:btSimAbaixo" class="scdp ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="confirmaMovimentoAbaixo.hide();
+                                    ;
+                                    PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:btSimAbaixo', process: '@all', update: 'formCadastraViagem:roteiros'});
+                                    return false;" type="submit" role="button" aria-disabled="false">
+                                <span class="ui-button-text">Sim</span>
+                            </button>
+                            <button id="formCadastraViagem:btNaoAbaixo" name="formCadastraViagem:btNaoAbaixo" class="scdp ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ajax.AjaxRequest('/novoscdp/pages/cadastrar_viagem/cadastrar_viagem_edit.xhtml', {formId: 'formCadastraViagem', async: false, global: true, source: 'formCadastraViagem:btNaoAbaixo', process: '@all', oncomplete: function (xhr, status, args) {
+                                            confirmaMovimentoAbaixo.hide();
+                                            ;
+                                        }});
+                                    return false;" type="submit" role="button" aria-disabled="false">
+                                <span class="ui-button-text">Não</span>
+                            </button>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="ui-resizable-handle ui-resizable-n"></div>
+                <div class="ui-resizable-handle ui-resizable-e"></div>
+                <div class="ui-resizable-handle ui-resizable-s"></div>
+                <div class="ui-resizable-handle ui-resizable-w"></div>
+                <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001;"></div>
+                <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002;"></div>
+                <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003;"></div>
+                <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004;"></div>
+            </div>
+        </div>
+
+    </ui:define>
+</ui:composition>

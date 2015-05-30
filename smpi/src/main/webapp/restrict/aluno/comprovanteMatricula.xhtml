@@ -6,11 +6,65 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:c="http://java.sun.com/jsp/jstl/core"
                 xmlns:p="http://primefaces.org/ui"
-                template="./../resources/main.xhtml">
+                template="./../../resources/main.xhtml">
 
     <ui:define name="tarefas">
-    	<p:growl id="msg" life="300000"/> 
-
+        <p:growl id="msg" life="300000"/> 
+        <div class="band"> 
+            <div class="container"> 
+                <h2 class="primary stroked-bottom text-shadowed margin-bottom ">
+                    Comprovante de Matrícula
+                </h2>
+                <form id="formRelatorio" action="/aluno/relatorio/comprovanteMatricula/index.html" method="post"> 
+                    <div class="margin-bottom">    
+                        <span class="label">Curso</span>
+                        <br/>
+                        PG - Mestrado Profissional em Tecnologias Educacionais em Rede 
+                        <input type="hidden" name="alunoCursos" value="280680"/> <br/>  
+                    </div>   
+                    <div class="row"> 
+                        <div class="span2"> 
+                            <label class="label" for="ano">Ano<span class="required"></span></label>
+                            <br/>
+                            <input id="ano" name="ano" class="textfield width-100 integer" type="text" value="" autocomplete="off"/>  
+                        </div> 
+                        <div class="span3"> 
+                            <span class="label">Período<span class="required"></span></span>
+                            <br/>
+                            <select id="periodo" name="periodo" class="textfield width-100"> 
+                                <option value="101">1. Semestre</option>
+                                <option value="301">1. Trimestre</option>
+                                <option value="102">2. Semestre</option>
+                                <option value="302">2. Trimestre</option>
+                                <option value="303">3. Trimestre</option>
+                                <option value="304">4. Trimestre</option>
+                                <option value="100">Anual.</option>
+                                <option value="104">Curso de Inverno</option>
+                                <option value="103">Curso de Verão</option>
+                                <option value="401">Etapa 1</option>
+                                <option value="402">Etapa 2</option>
+                                <option value="403">Etapa 3</option>
+                                <option value="404">Etapa 4</option>
+                                <option value="400">Etapas</option>
+                                <option value="500">NAO UTILIZADOS</option>
+                                <option value="200">Semestral.</option>
+                                <option value="300">Trimestral.</option> 
+                            </select>  
+                        </div> 
+                    </div>  
+                    <div class="form-actions bottom ">
+                        <button class="btn primary gerarBtn" id="gerar" name="gerar" type="button">
+                            <i class="icon-save"></i> Gerar relatório</button>
+                    </div>
+                </form>
+                <script type="text/javascript"> $(document).ready(function () {
+                        $('#gerar').lockOnClick({timeout: 5000});
+                        $('#gerar').click(function () {
+                            $('#formRelatorio').submit();
+                        });
+                    });</script> 
+            </div> 
+        </div>
     </ui:define>
 
 </ui:composition>
